@@ -1,0 +1,20 @@
+<WatchFace width="450" height="450">
+    <Scene>
+        <!-- لون الخلفية الأسود لتوفير البطارية -->
+        <Color value="#000000" />
+        
+        <!-- عقرب الساعات (أبيض) -->
+        <AnalogClock>
+            <HourHand resource="hour_hand" 
+                      x="225" y="225" pivotX="0.5" pivotY="0.9" />
+            
+            <!-- عقرب الدقائق (أبيض) -->
+            <MinuteHand resource="minute_hand" 
+                        x="225" y="225" pivotX="0.5" pivotY="0.9" />
+            
+            <!-- عقرب الثواني (أخضر رياضي) -->
+            <SecondHand resource="second_hand" 
+                        x="225" y="225" pivotX="0.5" pivotY="0.9" />
+        </AnalogClock>
+    </Scene>
+</WatchFace>
