@@ -14,12 +14,17 @@ android {
         versionCode = 1
         versionName = "1.0"
     }
+
+    // السماح بترجمة ملفات WFF بدون ضغط (لحمايتها من أخطاء الـ Resources)
+    androidResources {
+        noCompress.add("watchface.xml")
+    }
 }
 
 dependencies {
-    // المكتبات الأساسية
     implementation("androidx.core:core-ktx:1.12.0")
     
-    // دعم Watch Face Format (WFF)
-    implementation("androidx.wear.watchface:watchface:1.2.1")
+    // الحل الجذري لخطأ Cannot mutate
+    compileOnly("androidx.wear.watchface:watchface:1.2.1")
+    implementation("androidx.wear.watchface:watchface-complications-data-source-ktx:1.2.1")
 }
