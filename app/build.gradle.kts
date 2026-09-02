@@ -17,12 +17,9 @@ android {
 }
 
 dependencies {
+    // المكتبات الأساسية
     implementation("androidx.core:core-ktx:1.12.0")
     
-    // المكتبات الحديثة لتطوير واجهات الساعة (Watch Faces)
+    // دعم Watch Face Format (WFF)
     implementation("androidx.wear.watchface:watchface:1.2.1")
-    implementation("androidx.wear.watchface:watchface-complications-data-source:1.2.1")
-    
-    // لدعم الرسم والألوان
-    implementation("androidx.palette:palette:1.0.0")
 }
