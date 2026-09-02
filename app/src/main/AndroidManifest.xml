@@ -4,18 +4,16 @@
     <uses-feature android:name="android.hardware.type.watch" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
+    <!-- قمنا بإزالة سطري android:icon و android:roundIcon لتجنب خطأ الملفات المفقودة -->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true">
 
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <!-- تعريف واجهة الساعة بنظام WFF -->
         <service
             android:name="androidx.wear.watchface.WatchFaceService"
             android:exported="true"
