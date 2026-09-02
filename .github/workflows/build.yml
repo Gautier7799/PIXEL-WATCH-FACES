@@ -1,15 +1,14 @@
 name: Build Android APK
 
-# متى يتم تشغيل هذا البناء؟
 on:
   push:
-    branches: [ "main", "master" ] # عند رفع أي كود جديد
-  workflow_dispatch: # إضافة زر للتشغيل اليدوي من واجهة GitHub
+    branches: [ "main", "master" ]
+  workflow_dispatch:
 
 jobs:
   build:
     name: Build APK
-    runs-on: ubuntu-latest # استخدام خادم لينكس سريع
+    runs-on: ubuntu-latest
 
     steps:
       - name: 📥 جلب الكود من المستودع
@@ -25,8 +24,8 @@ jobs:
       - name: 🐘 إعداد Gradle
         uses: gradle/actions/setup-gradle@v3
 
-      - name: ⚙️ إنشاء ملفات تشغيل Gradle (إن لم تكن موجودة)
-        run: gradle wrapper
+      - name: ⚙️ إنشاء ملفات تشغيل Gradle (بإصدار مستقر)
+        run: gradle wrapper --gradle-version 8.7
 
       - name: 🔑 إعطاء صلاحية التشغيل
         run: chmod +x gradlew
