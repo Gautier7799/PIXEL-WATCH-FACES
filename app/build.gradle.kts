@@ -15,7 +15,6 @@ android {
         versionName = "1.0"
     }
 
-    // السماح بترجمة ملفات WFF بدون ضغط (لحمايتها من أخطاء الـ Resources)
     androidResources {
         noCompress.add("watchface.xml")
     }
@@ -23,8 +22,5 @@ android {
 
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
-    
-    // الحل الجذري لخطأ Cannot mutate
-    compileOnly("androidx.wear.watchface:watchface:1.2.1")
-    implementation("androidx.wear.watchface:watchface-complications-data-source-ktx:1.2.1")
+    implementation("androidx.wear.watchface:watchface:1.2.1")
 }
