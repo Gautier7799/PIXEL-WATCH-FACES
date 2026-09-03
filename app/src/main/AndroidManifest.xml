@@ -8,7 +8,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@android:drawable/sym_def_app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@android:style/Theme.DeviceDefault">
@@ -32,10 +32,10 @@
                 android:resource="@xml/watch_face_info" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.preview"
-                android:resource="@drawable/ic_launcher_foreground" />
+                android:resource="@android:drawable/sym_def_app_icon" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.preview_circular"
-                android:resource="@drawable/ic_launcher_foreground" />
+                android:resource="@android:drawable/sym_def_app_icon" />
         </service>
 
         <!-- تعريف واجهة: Everyday Analog -->
@@ -53,10 +53,10 @@
                 android:resource="@xml/watch_face_info" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.preview"
-                android:resource="@drawable/ic_launcher_foreground" />
+                android:resource="@android:drawable/sym_def_app_icon" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.preview_circular"
-                android:resource="@drawable/ic_launcher_foreground" />
+                android:resource="@android:drawable/sym_def_app_icon" />
         </service>
 
         <!-- تعريف واجهة: Classic Chronograph -->
@@ -74,10 +74,10 @@
                 android:resource="@xml/watch_face_info" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.preview"
-                android:resource="@drawable/ic_launcher_foreground" />
+                android:resource="@android:drawable/sym_def_app_icon" />
             <meta-data
                 android:name="com.google.android.wearable.watchface.preview_circular"
-                android:resource="@drawable/ic_launcher_foreground" />
+                android:resource="@android:drawable/sym_def_app_icon" />
         </service>
 
         <!-- النشاط الرئيسي للتطبيق -->
