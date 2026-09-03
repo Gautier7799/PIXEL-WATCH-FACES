@@ -1,9 +1,9 @@
 <WatchFace width="450" height="450" shape="CIRCLE">
     <Scene backgroundColor="#000000">
         <AnalogClock x="0" y="0" width="450" height="450">
-            <HourHand resource="hand_hour" x="225" y="225" width="20" height="120" pivotX="0.5" pivotY="0.9" />
-            <MinuteHand resource="hand_minute" x="225" y="225" width="16" height="180" pivotX="0.5" pivotY="0.9" />
-            <SecondHand resource="hand_second" x="225" y="225" width="6" height="200" pivotX="0.5" pivotY="0.8" tintColor="#FF8E72" />
+            <HourHand resource="hand_hour" x="215" y="117" width="20" height="120" pivotX="0.5" pivotY="0.9" />
+            <MinuteHand resource="hand_minute" x="217" y="63" width="16" height="180" pivotX="0.5" pivotY="0.9" />
+            <SecondHand resource="hand_second" x="222" y="65" width="6" height="200" pivotX="0.5" pivotY="0.8" tintColor="#FF8E72" />
         </AnalogClock>
     </Scene>
 </WatchFace>
