@@ -3,9 +3,9 @@
 
     <uses-feature android:name="android.hardware.type.watch" />
 
+    <!-- لاحظ أنني حذفت سطر android:icon بالكامل -->
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
         android:label="واجهتي الجديدة"
         android:supportsRtl="true"
         android:hasCode="false">
@@ -14,14 +14,14 @@
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <!-- إعلان إصدار تنسيق واجهة الساعة -->
         <property
             android:name="com.google.android.wearable.watchface.WATCH_FACE_FORMAT_VERSION"
             android:value="1" />
 
+        <!-- استخدمنا صورة عقرب الساعات كمعاينة مؤقتة لأنها موجودة فعلاً في مشروعك -->
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
-            android:resource="@mipmap/ic_launcher" />
+            android:resource="@drawable/hour_hand" />
             
     </application>
 </manifest>
