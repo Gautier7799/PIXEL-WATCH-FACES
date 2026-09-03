@@ -1,16 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <uses-feature android:name="android.hardware.type.watch" />
+
     <application
         android:allowBackup="true"
         android:hasCode="false"
         android:label="@string/app_name"
         android:supportsRtl="true">
+
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
+
         <property
             android:name="com.google.wear.watchface.format.version"
             android:value="1" />
+
+        <!-- إزالة أي مكونات داخلية لضمان تثبيت نظيف على الساعة -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            tools:node="remove" />
+
+        <activity
+            android:name="androidx.activity.ComponentActivity"
+            tools:node="remove" />
+
+        <activity
+            android:name="androidx.compose.ui.tooling.PreviewActivity"
+            tools:node="remove" />
+
+        <receiver
+            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+            tools:node="remove" />
+
     </application>
 </manifest>
