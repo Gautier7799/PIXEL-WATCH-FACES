@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WatchFace width="450" height="450" xmlns:android="http://schemas.android.com/apk/res/android">
     <Scene>
-        <!-- صورة الخلفية المتموجة -->
+        <!-- استدعاء الخلفية -->
         <PartImage x="0" y="0" width="450" height="450">
             <Image resource="background" />
         </PartImage>
         
+        <!-- استدعاء العقارب وتحريكها -->
         <AnalogClock x="0" y="0" width="450" height="450">
             <HourHand resource="hour_hand" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5" />
             <MinuteHand resource="minute_hand" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5" />
             <SecondHand resource="second_hand" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
-                <!-- هذا السطر يجعل عقرب الثواني يتحرك بنعومة -->
                 <Sweep frequency="15" />
             </SecondHand>
         </AnalogClock>
