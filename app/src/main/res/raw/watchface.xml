@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WatchFace width="450" height="450" xmlns:android="http://schemas.android.com/apk/res/android">
+<WatchFace width="450" height="450">
     <Scene>
-        <!-- استدعاء الخلفية -->
-        <PartImage x="0" y="0" width="450" height="450">
-            <Image resource="background" />
-        </PartImage>
+        <!-- خلفية سوداء للحفاظ على البطارية -->
+        <Color value="#000000" />
         
-        <!-- استدعاء العقارب وتحريكها -->
+        <!-- ساعة العقارب -->
         <AnalogClock x="0" y="0" width="450" height="450">
-            <HourHand resource="hour_hand" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5" />
-            <MinuteHand resource="minute_hand" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5" />
-            <SecondHand resource="second_hand" x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
-                <Sweep frequency="15" />
-            </SecondHand>
+            <!-- عقرب الساعات (أبيض) -->
+            <HourHand resource="@drawable/hour_hand" 
+                      x="215" y="100" width="20" height="150" 
+                      pivotX="10" pivotY="125" />
+                      
+            <!-- عقرب الدقائق (أخضر) -->
+            <MinuteHand resource="@drawable/minute_hand" 
+                        x="215" y="75" width="20" height="175" 
+                        pivotX="10" pivotY="150" />
+                        
+            <!-- عقرب الثواني (أحمر) -->
+            <SecondHand resource="@drawable/second_hand" 
+                        x="220" y="50" width="10" height="200" 
+                        pivotX="5" pivotY="175" />
         </AnalogClock>
     </Scene>
 </WatchFace>
