@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WatchFace width="450" height="450"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <Scene>
+        <!-- هذا الجزء يعرض صورتك المتموجة كخلفية -->
+        <PartImage x="0" y="0" width="450" height="450">
+            <Image resource="background" />
+        </PartImage>
+        
+        <AnalogClock x="0" y="0" width="450" height="450">
+            
+            <!-- رسم عقرب الساعات (مستطيل أبيض مفرغ وحوافه دائرية) -->
+            <HourHand x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
+                <PartDraw x="0" y="0" width="450" height="450">
+                    <RoundRectangle x="215" y="120" width="20" height="125" cornerRadiusX="10" cornerRadiusY="10">
+                        <Stroke color="#FFFFFF" thickness="4" />
+                    </RoundRectangle>
+                </PartDraw>
+            </HourHand>
+            
+            <!-- رسم عقرب الدقائق (مستطيل أبيض مفرغ أطول) -->
+            <MinuteHand x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
+                <PartDraw x="0" y="0" width="450" height="450">
+                    <RoundRectangle x="215" y="70" width="20" height="175" cornerRadiusX="10" cornerRadiusY="10">
+                        <Stroke color="#FFFFFF" thickness="4" />
+                    </RoundRectangle>
+                </PartDraw>
+            </MinuteHand>
+            
+            <!-- رسم عقرب الثواني (الخط الأخضر الرياضي مع الدائرة في المنتصف) -->
+            <SecondHand x="0" y="0" width="450" height="450" pivotX="0.5" pivotY="0.5">
+                <PartDraw x="0" y="0" width="450" height="450">
+                    <Line startX="225" startY="50" endX="225" endY="260">
+                        <Stroke color="#00FF55" thickness="4" />
+                    </Line>
+                    <Circle centerX="225" centerY="225" radius="8">
+                        <Stroke color="#00FF55" thickness="4" />
+                        <Fill color="#000000" />
+                    </Circle>
+                </PartDraw>
+            </SecondHand>
+            
+        </AnalogClock>
+    </Scene>
+</WatchFace>
