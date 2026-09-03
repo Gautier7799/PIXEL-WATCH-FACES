@@ -1,60 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example">
 
+    <!-- أذونات نظام الساعة الأساسية -->
     <uses-feature android:name="android.hardware.type.watch" />
-    <uses-permission android:name="com.google.android.permission.PROVIDE_BACKGROUND" />
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
-        android:label="My Watch Faces"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
         android:supportsRtl="true"
-        tools:targetApi="31">
-        
-        <meta-data android:name="com.google.android.wearable.standalone" android:value="true" />
-        <meta-data android:name="com.google.android.wearable.watchface.format" android:value="true" />
+        android:theme="@android:style/Theme.DeviceDefault">
 
-        <!-- الواجهة الأولى: المجال الحركي -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <!-- تعريف واجهة: Kinetic Sphere -->
         <service
-            android:name="androidx.wear.watchface.WatchFaceService"
+            android:name=".faces.KineticWatchFaceService"
             android:exported="true"
-            android:label="WFF Kinetic"
+            android:label="Kinetic Sphere"
             android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
                 <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
             </intent-filter>
-            <meta-data android:name="android.service.wallpaper" android:resource="@xml/watch_face_info" />
-            <meta-data android:name="com.google.wear.watchface.format.resource" android:resource="@xml/watchface_kinetic" />
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face_info" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/ic_launcher_foreground" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/ic_launcher_foreground" />
         </service>
 
-        <!-- الواجهة الثانية: القرص اليومي -->
+        <!-- تعريف واجهة: Everyday Analog -->
         <service
-            android:name=".EverydayService"
+            android:name=".faces.EverydayWatchFaceService"
             android:exported="true"
-            android:label="WFF Everyday"
+            android:label="Everyday Analog"
             android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
                 <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
             </intent-filter>
-            <meta-data android:name="android.service.wallpaper" android:resource="@xml/watch_face_info" />
-            <meta-data android:name="com.google.wear.watchface.format.resource" android:resource="@xml/watchface_everyday" />
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face_info" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/ic_launcher_foreground" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/ic_launcher_foreground" />
         </service>
 
-        <!-- الواجهة الثالثة: الكرونوغراف -->
+        <!-- تعريف واجهة: Classic Chronograph -->
         <service
-            android:name=".ChronoService"
+            android:name=".faces.ChronoWatchFaceService"
             android:exported="true"
-            android:label="WFF Chrono"
+            android:label="Classic Chronograph"
             android:permission="android.permission.BIND_WALLPAPER">
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
                 <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE" />
             </intent-filter>
-            <meta-data android:name="android.service.wallpaper" android:resource="@xml/watch_face_info" />
-            <meta-data android:name="com.google.wear.watchface.format.resource" android:resource="@xml/watchface_chrono" />
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face_info" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/ic_launcher_foreground" />
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/ic_launcher_foreground" />
         </service>
+
+        <!-- النشاط الرئيسي للتطبيق -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="Pixel Watch Faces"
+            android:taskAffinity=""
+            android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.wearable.watchface.action.PREVIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
