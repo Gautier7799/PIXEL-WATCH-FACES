@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- إخبار النظام بأن هذا التطبيق مخصص لساعة ذكية -->
     <uses-feature android:name="android.hardware.type.watch" />
 
     <application
@@ -9,19 +8,17 @@
         android:icon="@mipmap/ic_launcher"
         android:label="واجهتي الجديدة"
         android:supportsRtl="true"
-        android:hasCode="false"> <!-- إلزامي جداً: يخبر النظام أنه لا يوجد كود برمجي (Java/Kotlin) -->
+        android:hasCode="false">
 
-        <!-- يخبر الساعة أن هذا التطبيق مستقل (لا يحتاج تطبيقاً على الهاتف) -->
         <meta-data
             android:name="com.google.android.wearable.standalone"
             android:value="true" />
 
-        <!-- إعلان إصدار تنسيق واجهة الساعة الجديد (إلزامي لـ Wear OS 5.1) -->
+        <!-- إعلان إصدار تنسيق واجهة الساعة -->
         <property
             android:name="com.google.android.wearable.watchface.WATCH_FACE_FORMAT_VERSION"
             android:value="1" />
 
-        <!-- الصورة التي ستظهر في قائمة اختيار الواجهات على الساعة -->
         <meta-data
             android:name="com.google.android.wearable.watchface.preview"
             android:resource="@mipmap/ic_launcher" />
